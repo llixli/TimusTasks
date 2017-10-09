@@ -5,24 +5,24 @@ import java.util.*;
 
 public class Task1001 {
     public static void main(String[] args) {
-
         Scanner in = new Scanner(System.in);
         PrintWriter out = new PrintWriter(System.out);
 
-        String dataFromThread = "";
+
+        StringBuilder dataFromThread = new StringBuilder("");
 
         while (in.hasNext()) {
-            dataFromThread += in.next();
+            dataFromThread.append(in.next());
         }
 
-        ArrayList<Double> resultList = getListOfResultValues(dataFromThread);
+        ArrayList<String> resultList = getListOfResultValues(dataFromThread.toString());
 
         for (int i = resultList.size() - 1; i >= 0; i--) {
-            out.println(resultList.get(i).toString());
+            System.out.println(resultList.get(i).toString());
         }
     }
 
-    private static ArrayList<Double> getListOfResultValues(String dataFromThread) {
+    private static ArrayList<String> getListOfResultValues(String dataFromThread) {
         ArrayList<Double> listOfValues = convertStringToListOfNumbers(dataFromThread);
         return getSqrtFromNumbersOfList(listOfValues);
     }
@@ -31,20 +31,23 @@ public class Task1001 {
         ArrayList<Double> listOfNumbers = new ArrayList<>();
 
         String[] arrayOfNumbers = dataFromThread.split("\\s+");
+        if (arrayOfNumbers.length > 0) {
 
-        for (int i = 0; i < arrayOfNumbers.length; i++) {
-            if (!arrayOfNumbers[i].equals("")) {
-                listOfNumbers.add(Double.parseDouble(arrayOfNumbers[i]));
+            for (String number : arrayOfNumbers) {
+                if (number.matches("[+-]?([0-9]*[.])?[0-9]+")) {
+                    listOfNumbers.add(Double.parseDouble(number));
+                }
             }
         }
         return listOfNumbers;
     }
 
-    private static ArrayList<Double> getSqrtFromNumbersOfList(ArrayList<Double> listOfValues) {
+    private static ArrayList<String> getSqrtFromNumbersOfList(ArrayList<Double> listOfValues) {
+        ArrayList<String> arrayListWithRowsOfNumbers = new ArrayList<>();
         for (int i = 0; i < listOfValues.size(); i++) {
-            listOfValues.set(i, Math.sqrt(listOfValues.get(i)));
+            arrayListWithRowsOfNumbers.add(String.format("%.4f", Math.sqrt(listOfValues.get(i))));
         }
-        return listOfValues;
+        return arrayListWithRowsOfNumbers;
     }
 
 }
