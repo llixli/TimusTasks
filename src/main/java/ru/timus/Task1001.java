@@ -6,48 +6,53 @@ import java.util.*;
 public class Task1001 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        PrintWriter out = new PrintWriter(System.out);
+  //      PrintWriter out = new PrintWriter(System.out);
 
 
-        StringBuilder dataFromThread = new StringBuilder("");
-
+        StringBuilder rowWithDataFromThread = new StringBuilder(" 1427  0   \n" +
+                "\n" +
+                "   876652098643267843 \n" +
+                "5276538\n" +
+                "  \n" +
+                "   ");
+/*
         while (in.hasNext()) {
-            dataFromThread.append(in.next());
+            rowWithDataFromThread.append(in.next());
         }
-
-        ArrayList<String> resultList = getListOfResultValues(dataFromThread.toString());
+*/
+        ArrayList<String> resultList = getListOfResultValues(rowWithDataFromThread.toString());
 
         for (int i = resultList.size() - 1; i >= 0; i--) {
             System.out.println(resultList.get(i).toString());
         }
     }
 
-    private static ArrayList<String> getListOfResultValues(String dataFromThread) {
-        ArrayList<Double> listOfValues = convertStringToListOfNumbers(dataFromThread);
-        return getSqrtFromNumbersOfList(listOfValues);
+    private static ArrayList<String> getListOfResultValues(String rowWithDataFromThread) {
+        ArrayList<Double> listOfNumbers = convertRowToListOfNumbers(rowWithDataFromThread);
+        ArrayList<String> listOfRoundedNumbersHowStrings = new ArrayList<>();
+        for (Double number : listOfNumbers) {
+            double sqrtOfNumber = Math.sqrt(number);
+
+            listOfRoundedNumbersHowStrings.add(String.format(Locale.US, "%.4f", sqrtOfNumber));
+        }
+
+        return listOfRoundedNumbersHowStrings;
     }
 
-    private static ArrayList<Double> convertStringToListOfNumbers(String dataFromThread) {
+    private static ArrayList<Double> convertRowToListOfNumbers(String rowWithDataFromThread) {
         ArrayList<Double> listOfNumbers = new ArrayList<>();
 
-        String[] arrayOfNumbers = dataFromThread.split("\\s+");
+        String[] arrayOfNumbers = rowWithDataFromThread.split("\\s+");
         if (arrayOfNumbers.length > 0) {
 
-            for (String number : arrayOfNumbers) {
-                if (number.matches("[+-]?([0-9]*[.])?[0-9]+")) {
-                    listOfNumbers.add(Double.parseDouble(number));
+            for (String row: arrayOfNumbers) {
+                if (row.matches("[+-]?([0-9]*[.])?[0-9]+")) {
+                    listOfNumbers.add(Double.parseDouble(row));
                 }
             }
         }
         return listOfNumbers;
     }
 
-    private static ArrayList<String> getSqrtFromNumbersOfList(ArrayList<Double> listOfValues) {
-        ArrayList<String> arrayListWithRowsOfNumbers = new ArrayList<>();
-        for (int i = 0; i < listOfValues.size(); i++) {
-            arrayListWithRowsOfNumbers.add(String.format("%.4f", Math.sqrt(listOfValues.get(i))));
-        }
-        return arrayListWithRowsOfNumbers;
-    }
 
 }
