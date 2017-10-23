@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * http://acm.timus.ru/problem.aspx?space=1&num=1409
+ * Page of task: http://acm.timus.ru/problem.aspx?space=1&num=1409
  */
 public class Task1409 {
     public static void main(String[] args) {
