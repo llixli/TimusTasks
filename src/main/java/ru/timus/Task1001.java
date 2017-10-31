@@ -5,6 +5,7 @@ import java.util.*;
 
 /**
  * Page of task: http://acm.timus.ru/problem.aspx?space=1&num=1001
+ * Need maked tests
  */
 public class Task1001 {
     public static void main(String[] args) {
