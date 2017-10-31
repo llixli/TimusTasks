@@ -9,19 +9,20 @@ import java.util.Scanner;
  */
 public class Task2012 {
     public static void main(String[] args) {
-    	Task2001 task2012 = new Task2012();
+    	Task2012 task2012 = new Task2012();
         Scanner in = new Scanner(System.in);
         PrintWriter out = new PrintWriter(System.out);
 
         String result = "NO";
 
-        if (in.hasHextInt()) {
+        if (in.hasNextInt()) {
 	 	    int numberOfTasks =  in.nextInt();
 	 	    if (numberOfTasks >= 7 && numberOfTasks <= 11) {
 	 	    	result = "YES";
 	 	    }
     	}
 
-    	return result;
+    	out.println(result);
+        out.flush();
     }
 }
