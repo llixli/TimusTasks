@@ -4,13 +4,8 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
-<<<<<<< HEAD
-* Page of task: http://acm.timus.ru/problem.aspx?space=1&num=1000
-*/
-=======
  * Page of task: http://acm.timus.ru/problem.aspx?space=1&num=1000
  */
->>>>>>> b16fb21b5edafda1d30287530a05726dafa07840
 public class Task1000 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);

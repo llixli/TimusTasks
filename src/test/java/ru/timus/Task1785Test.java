@@ -32,7 +32,15 @@ public class Task1785Test {
 
     @Test
     public void convertNumberToEqualWordSuccessTest() throws Exception {
+        //assertEquals("few", task1785.convertNumberToEqualWord(1));
+        //assertEquals("several", task1785.convertNumberToEqualWord(7));
+        //assertEquals("pack", task1785.convertNumberToEqualWord(19));
         assertEquals("lots", task1785.convertNumberToEqualWord(45));
+        /*assertEquals("horde", task1785.convertNumberToEqualWord(98));
+        assertEquals("throng", task1785.convertNumberToEqualWord(210));
+        assertEquals("swarm", task1785.convertNumberToEqualWord(355));
+        assertEquals("zounds", task1785.convertNumberToEqualWord(777));
+        assertEquals("legion", task1785.convertNumberToEqualWord(1042));*/
     }
 
     @After

@@ -1,10 +1,10 @@
 package ru.timus;
 
 import java.io.PrintWriter;
-        import java.util.Scanner;
+import java.util.Scanner;
 
 /**
- * http://acm.timus.ru/problem.aspx?space=1&num=1785
+ * Page of task: http://acm.timus.ru/problem.aspx?space=1&num=1785
  */
 public class Task1785 {
     public static void main(String[] args) {
