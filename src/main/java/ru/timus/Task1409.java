@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 /**
  * Page of task: http://acm.timus.ru/problem.aspx?space=1&num=1409
+ * Need make tests
  */
 public class Task1409 {
     public static void main(String[] args) {

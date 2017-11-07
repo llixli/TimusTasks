@@ -1,7 +1,7 @@
 package ru.timus;
 
 import java.io.PrintWriter;
-        import java.util.Scanner;
+import java.util.Scanner;
 
 /**
  * Page of task: http://acm.timus.ru/problem.aspx?space=1&num=1785
